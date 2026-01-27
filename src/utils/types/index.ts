@@ -14,6 +14,11 @@ export type CellType = {
   isPath: boolean;
   isStart: boolean;
   isEnd: boolean;
+  distance: number;
+  parent: CellType | null;
+  isVisited: boolean;
 };
 
 export type GridType = CellType[];
+
+export type SpeedType = "3" | "2" | "1";
