@@ -7,6 +7,11 @@ export type MazeType =
   | "hunt_and_kill"
   | "recursive_division";
 
+export type MazeSelectType = {
+  name: string;
+  value: MazeType;
+};
+
 export type CellType = {
   row: number;
   col: number;
@@ -19,6 +24,11 @@ export type CellType = {
   isVisited: boolean;
 };
 
-export type GridType = CellType[];
+export type GridType = CellType[][];
 
 export type SpeedType = "3" | "2" | "1";
+
+export type SpeedSelectType = {
+  name: string;
+  value: SpeedType;
+};

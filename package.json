@@ -5,21 +5,27 @@
   "scripts": {
     "dev": "next dev -p 3636",
     "build": "next build",
-    "start": "next start -p 3636",
-    "lint": "eslint"
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "next": "16.1.4",
-    "react": "19.2.3",
-    "react-dom": "19.2.3",
-    "zustand": "^5.0.10"
+    "@tailwindcss/postcss": "^4.0.0-alpha.3",
+    "clsx": "^2.1.0",
+    "next": "15.1.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "react-icons": "^5.5.0",
+    "tailwind-merge": "^2.2.0",
+    "tailwindcss": "^4.0.0-alpha.3",
+    "zustand": "^4.5.0"
   },
   "devDependencies": {
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "16.1.4",
+    "@types/node": "^20.10.0",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "eslint": "^8",
+    "eslint-config-next": "15.0.0",
+    "postcss": "^8",
     "typescript": "^5"
   }
 }

@@ -1,3 +1,8 @@
+import {
+  END_CELL_CONFIGURATION,
+  START_CELL_CONFIGURATION,
+} from "@/utils/constants/grid";
+import { createGrid } from "@/utils/helpers/grid";
 import { AlgorithmType, GridType, MazeType } from "@/utils/types";
 import { create } from "zustand";
 
@@ -18,9 +23,9 @@ interface Actions {
 type Store = PathfindingStoreInterface & Actions;
 
 export const usePathfinding = create<Store>()((set) => ({
-  algorithm: "dfs",
+  algorithm: "bfs",
   maze: "none",
-  grid: [],
+  grid: createGrid(START_CELL_CONFIGURATION, END_CELL_CONFIGURATION),
   isGraphVisualize: false,
   setAlgorithm: (algorithm: AlgorithmType) => set({ algorithm }),
   setMaze: (maze: MazeType) => set({ maze }),
