@@ -1,8 +1,10 @@
+import { isRowAndColEqual } from ".";
 import {
   MAX_ROWS,
   MAX_COLS,
   START_CELL_CONFIGURATION,
   END_CELL_CONFIGURATION,
+  SPEEDS,
 } from "../constants/grid";
 import { CellType, GridType, SpeedType } from "../types";
 
@@ -74,4 +76,27 @@ export const createWall = (
   startCell: CellType,
   endCell: CellType,
   speed: SpeedType,
-) => {};
+) => {
+  const delay = 6 * (SPEEDS.find((s) => s.value === speed)!.value - 1);
+
+  for (let row = 0; row < MAX_ROWS; row++) {
+    setTimeout(
+      () => {
+        for (let col = 0; col < MAX_COLS; col++) {
+          if (row % 2 === 0 || col % 2 === 0) {
+            if (
+              !isRowAndColEqual(row, col, startCell) &&
+              !isRowAndColEqual(row, col, endCell)
+            ) {
+              setTimeout(() => {
+                document.getElementById(`cell-${row}-${col}`)!.className =
+                  "cell cell-wall";
+              }, delay * col);
+            }
+          }
+        }
+      },
+      delay * (MAX_ROWS / 2) * row,
+    );
+  }
+};

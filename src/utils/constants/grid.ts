@@ -37,7 +37,7 @@ export const MAZES: MazeSelectType[] = [
 ];
 
 export const SPEEDS: SpeedSelectType[] = [
-  { name: "Fast", value: "3" },
-  { name: "Medium", value: "2" },
-  { name: "Slow", value: "1" },
+  { name: "Fast", value: 3 },
+  { name: "Medium", value: 2 },
+  { name: "Slow", value: 1 },
 ];
